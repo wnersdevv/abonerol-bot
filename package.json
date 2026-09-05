@@ -1,0 +1,19 @@
+{
+  "name": "wnersdev-ultimate-abone-rol-system",
+  "version": "1.0.0",
+  "description": "WNERSDEV ULTIMATE ABONE ROL SYSTEM - Discord subscription/role/entitlement platformu",
+  "main": "wnersdev.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node wnersdev.js",
+    "lint:syntax": "node --check wnersdev.js"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "mongoose": "^8.6.0"
+  },
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,142 @@
+{
+  "discord": {
+    "token": "",
+    "clientId": "",
+    "ownerIds": [],
+    "managerRoleIds": [],
+    "staffRoleIds": [],
+    "defaultLocale": "tr"
+  },
+  "mongodb": {
+    "uri": "",
+    "dbName": "wnersdev_abone_rol"
+  },
+  "subscription": {
+    "cancelBehavior": "period_end",
+    "pauseAllowed": true,
+    "gracePeriod": {
+      "enabled": true,
+      "durationMs": 259200000
+    },
+    "planChangePolicy": "immediate"
+  },
+  "payment": {
+    "provider": "none",
+    "webhookServer": {
+      "enabled": false,
+      "port": 3300,
+      "path": "/webhook"
+    },
+    "providers": {
+      "stripe": {
+        "enabled": false,
+        "secretKey": "",
+        "webhookSecret": ""
+      },
+      "iyzico": {
+        "enabled": false,
+        "apiKey": "",
+        "secretKey": "",
+        "baseUrl": ""
+      }
+    }
+  },
+  "role": {
+    "autoRepair": true,
+    "conflictPolicy": "highest_priority_keep"
+  },
+  "notification": {
+    "reminders": [
+      { "value": 30, "unit": "day" },
+      { "value": 14, "unit": "day" },
+      { "value": 7, "unit": "day" },
+      { "value": 3, "unit": "day" },
+      { "value": 1, "unit": "day" },
+      { "value": 1, "unit": "hour" }
+    ],
+    "dmEnabled": true,
+    "channelFallbackEnabled": true
+  },
+  "security": {
+    "auditLogEnabled": true,
+    "sensitiveFieldMask": true,
+    "webhookSignatureRequired": true
+  },
+  "logging": {
+    "level": "info",
+    "toFile": true,
+    "filePath": "logs/wnersdev.log"
+  },
+  "scheduler": {
+    "expirationCheckIntervalMs": 300000,
+    "reminderCheckIntervalMs": 300000,
+    "roleSyncIntervalMs": 900000,
+    "paymentReconciliationIntervalMs": 3600000,
+    "cleanupIntervalMs": 21600000,
+    "healthCheckIntervalMs": 60000
+  },
+  "queue": {
+    "concurrency": 3,
+    "maxAttempts": 5,
+    "backoffBaseMs": 5000
+  },
+  "cache": {
+    "ttlMs": 60000,
+    "maxEntries": 5000
+  },
+  "youtube": {
+    "apiKey": "",
+    "quotaDailyLimit": 10000,
+    "requestTimeoutMs": 10000,
+    "maxRetries": 3
+  },
+  "gemini": {
+    "apiKey": "",
+    "model": "gemini-2.0-flash",
+    "requestTimeoutMs": 15000,
+    "maxRetries": 2,
+    "concurrencyLimit": 2
+  },
+  "captcha": {
+    "provider": "none",
+    "providers": {
+      "turnstile": { "enabled": false, "siteKey": "", "secretKey": "" },
+      "hcaptcha": { "enabled": false, "siteKey": "", "secretKey": "" },
+      "recaptcha": { "enabled": false, "siteKey": "", "secretKey": "" }
+    },
+    "maxFailedAttempts": 5,
+    "lockDurationMs": 900000
+  },
+  "verification": {
+    "lockTimeoutMs": 600000,
+    "channelChangeCooldownMs": 259200000,
+    "verificationCooldownMs": 3600000,
+    "manualRetryCooldownMs": 600000,
+    "scanConcurrency": 3,
+    "massFailurePercentageThreshold": 40,
+    "massFailureMinSampleSize": 20,
+    "scanRetentionDays": 30
+  },
+  "photoVerification": {
+    "enabled": false,
+    "channelId": "",
+    "requiredRoleId": "",
+    "moderationMode": "otomatik",
+    "staffMentionRoleIds": [],
+    "deleteUnauthorizedMessages": true,
+    "unauthorizedWarningDeleteAfterMs": 8000,
+    "aiRiskRejectThreshold": 70,
+    "aiRiskReviewThreshold": 40
+  },
+  "guildDefaults": {
+    "trialAbuseDetection": true,
+    "featureFlags": {
+      "payments": false,
+      "trial": true,
+      "notifications": true,
+      "autoRenew": true,
+      "statistics": true,
+      "roleSync": true
+    }
+  }
+}
